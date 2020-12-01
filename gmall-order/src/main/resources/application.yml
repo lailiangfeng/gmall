@@ -1,0 +1,30 @@
+server:
+  port: 8092
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 127.0.0.1
+  logging:
+    level: trace
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
+    virtual-host: /fengge
+    port: 5672
+gmall:
+  jwt:
+    pubKeyPath: /Users/liwanqing/Desktop/rsa/id_rsa.pub # 公钥地址
+    cookieName: GMALL_TOKEN
+    userKey: user-key
+alipay:
+  app_id: 2016092300576557
+  merchant_private_key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCCY2rk02uK+ruEXKM1nQonhwDBdmI1nwBxKq9cowXs5+mo8qTy+EY8drnkF7POMyv+vzfERGtNiRMHJelmhg2NGAZi9NNkCIiysnF3ldTWbXr7dE4H5hYxccAPwfXZawyG7Rvm5OebMvUZM6vb2b93lniwhtCRvCTOWEAZFJXE7nVUdgLtveSBv+8jSbYAyn+OXlO7X+XfKZTB9iLSqIxhFevACrR/AAlCJqo+PFP8FlPek7AbL+PyFImCQ8/ywaDfGBd2sp3PgAChRLRdUd0lfYPlaVGv+LR8Vbk/FfTI+NVN12qto/a/Mmp6OxOZa/NjsDQ/wx68mm7xaQnBsQwXAgMBAAECggEADF/7KTSXpF0fpvRT2SbKa+34OGRP9d7dX+A5PIWMbmukVZCR7y15HQv3oJpPSma46jijxlDoDjfQQoFqoXxflOCO2p154qicsLkW486ooKFLZsonDcDcoly1acly1+u9CKFAYK2g/a3cbUPmL7t+3I6/baGd8fb1V1Aw5TB69nG3MBXqY0+L2KfZwSyWT/cuMWArFxZkhF2T4b0JNc0A5JAEMHJ1PyP5LhWmTs0QhoMkNkjaA/0YfA+kasGItbxneMdYprLTOcG4THeiOkC+oCcFupXX8+SrrNLsSTGTtFqOgeobSjC5muN5WPL98r/P7C7m1Dh/anZcXoZFdlSOgQKBgQD0b+z059N5OGm0paTdZwca5h6wIYh/9+M1qeuK8KKlGNGQpqEGSHi+pOqTCXGEsBExXHTGNMPbjgYoQKnmZVjmJ/W6a43BbIIK1ty0nt/zPayG3E2tpvdPECSQxtglkcHd1D3jmaIHXJEG51PnQCg5yfoY1i83/4MbF7SzGfA/UQKBgQCIjmNq0vchW/PYVDmxZVlydpkDnGoZkOwk18w94MeP9rzVkKkod6v9pa3VgA3Xi77j494JeXkvCAXMqTzrEGit/XrgK27dg+EQszI3+EXBsub4sGPPGMjH+YCg+WZFgV6wf/65xaSZIot7wc8EmeRLTGIvsrOGeQaVVjiJgFLK5wKBgQCmFRpqeM2uMo9YB6hSKrugIjU9tTsav+IoRzDccY4BITDa2OzV6Q3pcwJTL3prDnpQEKLjPVzKY+B5Hx6RhdD2aLZEmOlzP/fHx5+kNcKycfg0laFN2QF2PeCqYgDg3f1cbOY0K+H0oIeFqk3O9T+frEV69KSWpsx87wl/G6OqUQKBgAD2cAD6x782dLubrGRxwHWsHFwIKD9R5DhGRSxSf1WmeaJPyMF+RnodRuJwaqiQVaIpoxESCCaquc+9ia5miTZgyRL3e2qYWWfSu5HlcChzaGlsZOe61v+B5MQ9vdjTlqVL4bHRkN17ftw6e4kexJs7SJ3pdpaGF+PJndBqVSsVAoGAYE8X/M2Xxm/VqvRE7Q1XV5G7++BFrNtzcD4oXmKI9lClIZ9T5o9bCvYYB7Wn6P5REXJif1rVDpJg/FX6HPEH1jFZwoMp3tQS6kaZL1Ta4OF8uN+V1Jz9wnMGT2clcropAblyFv62cCyAYpuQgmLVlLu+0Eab988CvfBasiBq8QE=
+  alipay_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA22o6Y+8250ahpVhYJ0/MhUPVheA8w9rHbC3exiPF1p89UpJWb1W7uECCh6QKNKuEH6HyprkqtNlhNTLQ63loG1W9MctPWm6BJdOj+ClvIAjfqHWNJIy6OczYkG1ZGjq7yifIVDDRHr8yOphxTkRNlUtmwcterdS7Mh11TLL+l43hkcL9he8G98ErAdrZy/AaL2vDipdRq9efF0Rocdw8KUuli1iPo8oiztaViTcA+z8xiWLwWDVjQGFSHuD/h0ukbvgxbcuT6wLKm5AYdC6dOGSWYv6VnfwaObd2Nqw9zbPKj8ErGz2XPMYlFHAUicH0vzL0cstrHkfW6V7ouswsLQIDAQAB
+  notify_url: http://9glldacce2.52http.net/api/order/pay/success
+  return_url: http://www.baidu.com
+  sign_type: RSA2
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do

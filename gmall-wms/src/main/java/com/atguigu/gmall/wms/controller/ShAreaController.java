@@ -24,7 +24,7 @@ import com.atguigu.gmall.wms.service.ShAreaService;
  *
  * @author llf
  * @email llf@atguigu.com
- * @date 2020-03-08 11:45:50
+ * @date 2020-06-08 16:27:27
  */
 @Api(tags = "全国省市区信息 管理")
 @RestController

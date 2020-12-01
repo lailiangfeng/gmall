@@ -1,7 +1,6 @@
 package com.atguigu.gmall.sms.controller;
 
 import java.util.Arrays;
-import java.util.Map;
 
 
 import com.atguigu.core.bean.PageVo;
@@ -32,7 +31,6 @@ import com.atguigu.gmall.sms.service.SpuBoundsService;
 public class SpuBoundsController {
     @Autowired
     private SpuBoundsService spuBoundsService;
-
     /**
      * 列表
      */

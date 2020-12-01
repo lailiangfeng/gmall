@@ -33,6 +33,28 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    @GetMapping("query")
+    public Resp<MemberEntity> query(@RequestParam("username")String username,@RequestParam("password")String password){
+       MemberEntity memberEntity =  this.memberService.queryUser(username,password);
+       return Resp.ok(memberEntity);
+
+    }
+
+
+    @PostMapping("register")
+    public Resp<Object> register(MemberEntity memberEntity,@RequestParam("code") String code){
+        //可以使用requestParem接受 类似？后面传参
+        //用 member对象接受  code  在单独接受
+        this.memberService.register(memberEntity,code);
+        return Resp.ok(null);
+    }
+
+    @GetMapping("check/{data}/{type}")
+    public Resp<Boolean> checkData(@PathVariable("data") String data,@PathVariable("type") Integer type){
+        Boolean flag =this.memberService.checkData(data,type);
+        return Resp.ok(flag);
+    }
+
     /**
      * 列表
      */

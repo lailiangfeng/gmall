@@ -13,5 +13,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface OrderDao extends BaseMapper<OrderEntity> {
-	
+
+    public int closeOrder(String orderToken);
+    //支付回调更新订单状态
+    public int payOrder(String orderToken);
 }

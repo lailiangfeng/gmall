@@ -13,6 +13,18 @@
         <result property="attrSort" column="attr_sort"/>
         <result property="quickShow" column="quick_show"/>
     </resultMap>
+    <select id="querySearchAttrValueBySpuId" resultMap="productAttrValueMap">
+          SELECT
+          p.`attr_id`,
+          p.`attr_name`,
+          p.`attr_value`
+        FROM
+          `pms_product_attr_value` p
+          INNER JOIN `pms_attr` pa
+            ON p.`attr_id` = pa.`attr_id`
+        WHERE pa.`search_type` = 1
+          AND p.`spu_id` = #{spuId}
+    </select>
 
 
 </mapper>

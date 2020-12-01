@@ -14,5 +14,8 @@
         <result property="sort" column="sort"/>
     </resultMap>
 
+<!--    <select id="selectBrands" resultType="com.atguigu.gmall.pms.entity.BrandEntity">-->
+<!--        select * from pms_brand where pms_brand.brand_id =#{id}-->
+<!--    </select>-->
 
 </mapper>

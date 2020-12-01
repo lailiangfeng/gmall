@@ -14,6 +14,7 @@
         <result property="createTime" column="create_time"/>
         <result property="uodateTime" column="uodate_time"/>
     </resultMap>
+    <select id="getSpuList"></select>
 
 
 </mapper>

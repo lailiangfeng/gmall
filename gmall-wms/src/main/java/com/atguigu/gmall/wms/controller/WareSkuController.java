@@ -1,14 +1,19 @@
 package com.atguigu.gmall.wms.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
+import com.atguigu.gmall.wms.vo.SkuLockVO;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +29,7 @@ import com.atguigu.gmall.wms.service.WareSkuService;
  *
  * @author llf
  * @email llf@atguigu.com
- * @date 2020-03-08 11:45:50
+ * @date 2020-06-08 16:27:27
  */
 @Api(tags = "商品库存 管理")
 @RestController
@@ -32,6 +37,21 @@ import com.atguigu.gmall.wms.service.WareSkuService;
 public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
+    @PostMapping
+    public Resp<Object> checkAndLockStore(@RequestBody List<SkuLockVO> skuLockVOS){
+       String msg =  this.wareSkuService.checkAndLockStore(skuLockVOS);
+       if(StringUtils.isEmpty(msg)){
+           return Resp.ok(null);
+       }
+       return Resp.fail(msg);
+    }
+
+
+    @GetMapping("{skuId}")
+    public Resp<List<WareSkuEntity>> queryWareSkusBySkuId(@PathVariable("skuId")Long skuId){
+        List<WareSkuEntity> wareSkuEntities = this.wareSkuService.list(new QueryWrapper<WareSkuEntity>().eq("sku_id",skuId));
+        return Resp.ok(wareSkuEntities);
+    }
 
     /**
      * 列表

@@ -53,18 +53,18 @@ public class Query<T> {
         //前端字段排序
         if(StringUtils.isNotEmpty(orderField) && StringUtils.isNotEmpty(order)){
             if("asc".equalsIgnoreCase(order)) {
-                return page.setAsc(orderField);
+               // return page.setAsc(orderField);
             }else {
-                return page.setDesc(orderField);
+              //  return page.setDesc(orderField);
             }
         }
 
         //默认排序
-        if(isAsc) {
-            page.setAsc(defaultOrderField);
-        }else {
-            page.setDesc(defaultOrderField);
-        }
+//        if(isAsc) {
+//            page.setAsc(defaultOrderField);
+//        }else {
+//            page.setDesc(defaultOrderField);
+//        }
 
         return page;
     }

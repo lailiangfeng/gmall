@@ -1,0 +1,22 @@
+server:
+  port: 8090
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 127.0.0.1
+  logging:
+    level: trace
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
+    virtual-host: /fengge
+    port: 5672
+gmall:
+  jwt:
+    pubKeyPath: /Users/liwanqing/Desktop/rsa/id_rsa.pub # 公钥地址
+    cookieName: GMALL_TOKEN
+    userKey: user-key

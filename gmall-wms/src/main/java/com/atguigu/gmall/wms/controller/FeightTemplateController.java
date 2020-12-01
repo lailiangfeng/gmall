@@ -24,7 +24,7 @@ import com.atguigu.gmall.wms.service.FeightTemplateService;
  *
  * @author llf
  * @email llf@atguigu.com
- * @date 2020-03-08 11:45:50
+ * @date 2020-06-08 16:27:27
  */
 @Api(tags = "运费模板 管理")
 @RestController

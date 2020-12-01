@@ -7,15 +7,27 @@ spring:
         server-addr: 127.0.0.1:8848
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:8889/guli_pms
+    url: jdbc:mysql://127.0.0.1:8889/guli_pms?useSSL=false
     username: root
     password: root
   redis:
     host: 127.0.0.1
+  logging:
+    level: trace
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
+    virtual-host: /fengge
+    port: 5672
 
+item:
+  rabbitmq:
+    exchange: GMALL-PMS-EXCHANGE
 
 mybatis-plus:
   global-config:
    db-config:
      id-type: auto
   mapper-locations: classpath:mapper/pms/**/*.xml
+
