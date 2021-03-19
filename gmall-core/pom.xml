@@ -100,7 +100,7 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
             <optional>true</optional> <!--不传递依赖-->
-            <version>9.0.29</version>
+            <version>9.0.41</version>
         </dependency>
 
     </dependencies>
